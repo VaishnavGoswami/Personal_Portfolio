@@ -557,6 +557,18 @@
     document.addEventListener('DOMContentLoaded', function() {
         // Particles initialization
         function initParticles(isDark) {
+            // Cleanup existing particles instance to prevent memory leaks and stacked canvases
+            if (window.pJSDom && window.pJSDom.length > 0) {
+                // Cancel animation frame for existing instances
+                window.pJSDom.forEach(domItem => {
+                    if (domItem.pJS && domItem.pJS.fn && domItem.pJS.fn.drawAnimFrame) {
+                        cancelAnimationFrame(domItem.pJS.fn.drawAnimFrame);
+                    }
+                });
+                window.pJSDom = []; // Clear instance array
+                document.getElementById('particles-js').innerHTML = ''; // Clear canvas from DOM
+            }
+
             const color = isDark ? "#94a3b8" : "#10b981"; // Slate-400 or Emerald-500
 
             particlesJS("particles-js", {
@@ -668,32 +680,16 @@
                 },
                 "retina_detect": true
             });
-        }
 
-        // Check initial theme
-        const isDark = document.documentElement.classList.contains('dark');
-        initParticles(isDark);
-
-        // Theme toggle listener
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        if (themeToggleBtn) {
-            themeToggleBtn.addEventListener('click', function() {
-                // Wait for the class to be toggled by the existing listener (which runs on same click)
-                // We use setTimeout to ensure we run after the class change
-                setTimeout(() => {
-                    const isDark = document.documentElement.classList.contains('dark');
-                    initParticles(isDark);
-                }, 10);
-            });
+            // Apply Monkey-patch to reduce repulsion speed immediately after init
+            applyRepulsePatch();
         }
 
         // Monkey-patch particles.js repulse mode to reduce speed/strength
-        // This must run after particlesJS is initialized
-        setTimeout(() => {
-            console.log("Checking pJSDom:", window.pJSDom);
+        function applyRepulsePatch() {
             if (window.pJSDom && window.pJSDom.length > 0) {
-                console.log("Patching repulseParticle");
-                const pJS_instance = window.pJSDom[0].pJS;
+                // Patch the last instance (newly created)
+                const pJS_instance = window.pJSDom[window.pJSDom.length - 1].pJS;
                 pJS_instance.fn.modes.repulseParticle = function(p) {
                     const pJS = pJS_instance;
                     function clamp(number, min, max) { return Math.min(Math.max(number, min), max); }
@@ -759,7 +755,24 @@
                     }
                 };
             }
-        }, 500); // Small delay to ensure init
+        }
+
+        // Check initial theme
+        const isDark = document.documentElement.classList.contains('dark');
+        initParticles(isDark);
+
+        // Theme toggle listener
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', function() {
+                // Wait for the class to be toggled by the existing listener (which runs on same click)
+                // We use setTimeout to ensure we run after the class change
+                setTimeout(() => {
+                    const isDark = document.documentElement.classList.contains('dark');
+                    initParticles(isDark);
+                }, 10);
+            });
+        }
     });
 </script>
 </body></html>
