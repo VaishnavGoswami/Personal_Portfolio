@@ -702,7 +702,7 @@
 
                         var normVec = {x: dx_mouse/dist_mouse, y: dy_mouse/dist_mouse},
                             repulseRadius = pJS.interactivity.modes.repulse.distance,
-                            velocity = 1000,
+                            velocity = 100,
                             // Scale down the effect to 2% to make it smoother/slower
                             repulseFactor = clamp((1/repulseRadius)*(-1*Math.pow(dist_mouse/repulseRadius,2)+1)*repulseRadius*velocity, 0, 100) * 0.02;
 
@@ -755,7 +755,6 @@
                     }
                 };
             }
-<<<<<<< Updated upstream
         }
 
         // Check initial theme
@@ -774,9 +773,6 @@
                 }, 10);
             });
         }
-=======
-        }, 50); // Small delay to ensure init
->>>>>>> Stashed changes
     });
 </script>
 </body></html>
