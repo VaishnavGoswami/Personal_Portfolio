@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vaishnav Goswami - Skills</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#3b82f6", // Blue-500, distinct and professional
+                        "primary-dark": "#2563eb",
+                        "background-light": "#f8fafc", // Slate-50
+                        "background-dark": "#0f172a", // Slate-900
+                        "card-light": "#ffffff",
+                        "card-dark": "#1e293b", // Slate-800
+                        "text-light-primary": "#1e293b",
+                        "text-dark-primary": "#f1f5f9",
+                        "text-light-secondary": "#64748b",
+                        "text-dark-secondary": "#94a3b8",
+                        "border-light": "#e2e8f0",
+                        "border-dark": "#334155"
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        display: ["Playfair Display", "serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+        .delay-600 { animation-delay: 600ms; }
+        .skill-pill:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-light-primary dark:text-text-dark-primary transition-colors duration-500 antialiased min-h-screen font-sans selection:bg-primary/30 selection:text-primary-dark dark:selection:text-white">
+<nav class="fixed top-0 w-full z-50 backdrop-blur-xl bg-white/80 dark:bg-slate-900/80 border-b border-border-light dark:border-border-dark transition-all duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between h-16 items-center">
+<div class="flex-shrink-0 flex items-center opacity-0 animate-fade-in">
+<span class="font-display font-bold text-xl tracking-tight text-slate-900 dark:text-white cursor-pointer hover:text-primary dark:hover:text-primary transition-colors">VG.</span>
+</div>
+<div class="hidden md:flex space-x-8 opacity-0 animate-fade-in delay-100">
+<a class="text-text-light-secondary dark:text-text-dark-secondary hover:text-primary dark:hover:text-primary transition-colors px-3 py-2 text-sm font-medium relative group" href="#">
+                        Home
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+</a>
+<a class="text-text-light-secondary dark:text-text-dark-secondary hover:text-primary dark:hover:text-primary transition-colors px-3 py-2 text-sm font-medium relative group" href="#">
+                        Experience
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+</a>
+<a class="text-primary font-semibold px-3 py-2 text-sm relative" href="#">
+                        Skills
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-100 transition-transform duration-300"></span>
+</a>
+<a class="text-text-light-secondary dark:text-text-dark-secondary hover:text-primary dark:hover:text-primary transition-colors px-3 py-2 text-sm font-medium relative group" href="#">
+                        Projects
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+</a>
+</div>
+<button class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-slate-900 opacity-0 animate-fade-in delay-200" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-icons-round text-slate-600 dark:text-slate-300">brightness_4</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+<div class="text-center mb-16 space-y-4 opacity-0 animate-fade-in-up">
+<h1 class="text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white tracking-tight">Technical Expertise</h1>
+<p class="text-lg text-text-light-secondary dark:text-text-dark-secondary max-w-2xl mx-auto leading-relaxed">
+            A comprehensive toolkit honed through years of experience in Data Science, MLOps, and Generative AI.
+        </p>
+<div class="w-24 h-1 bg-gradient-to-r from-primary to-blue-300 mx-auto rounded-full mt-6 shadow-lg shadow-blue-500/20"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+<div class="group bg-card-light dark:bg-card-dark rounded-xl shadow-sm hover:shadow-2xl dark:shadow-none border border-border-light dark:border-border-dark p-6 transition-all duration-500 hover:-translate-y-2 opacity-0 animate-fade-in-up delay-100 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent dark:from-blue-900/10 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10">
+<div class="flex items-center space-x-4 mb-6">
+<div class="p-3 bg-blue-50 dark:bg-blue-900/30 rounded-lg text-primary group-hover:scale-110 transition-transform duration-300">
+<span class="material-icons-round text-2xl">code</span>
+</div>
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">Programming &amp; Data</h2>
+</div>
+<div class="space-y-5">
+<div>
+<h3 class="text-xs font-semibold uppercase tracking-wider text-text-light-secondary dark:text-text-dark-secondary mb-3">Languages &amp; Libs</h3>
+<div class="flex flex-wrap gap-2">
+<span class="skill-pill px-3 py-1 bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full text-xs font-medium border border-slate-200 dark:border-slate-600 transition-all duration-300 hover:bg-blue-100 dark:hover:bg-blue-900/40 hover:text-blue-700 dark:hover:text-blue-300 hover:border-blue-200 dark:hover:border-blue-800 cursor-default">Python</span>
+<span class="skill-pill px-3 py-1 bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full text-xs font-medium border border-slate-200 dark:border-slate-600 transition-all duration-300 hover:bg-blue-100 dark:hover:bg-blue-900/40 hover:text-blue-700 dark:hover:text-blue-300 hover:border-blue-200 dark:hover:border-blue-800 cursor-default">SQL</span>
+<span class="skill-pill px-3 py-1 bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full text-xs font-medium border border-slate-200 dark:border-slate-600 transition-all duration-300 hover:bg-blue-100 dark:hover:bg-blue-900/40 hover:text-blue-700 dark:hover:text-blue-300 hover:border-blue-200 dark:hover:border-blue-800 cursor-default">Pandas</span>
+<span class="skill-pill px-3 py-1 bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full text-xs font-medium border border-slate-200 dark:border-slate-600 transition-all duration-300 hover:bg-blue-100 dark:hover:bg-blue-900/40 hover:text-blue-700 dark:hover:text-blue-300 hover:border-blue-200 dark:hover:border-blue-800 cursor-default">NumPy</span>
+<span class="skill-pill px-3 py-1 bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full text-xs font-medium border border-slate-200 dark:border-slate-600 transition-all duration-300 hover:bg-blue-100 dark:hover:bg-blue-900/40 hover:text-blue-700 dark:hover:text-blue-300 hover:border-blue-200 dark:hover:border-blue-800 cursor-default">Scikit-learn</span>
+</div>
+</div>
+<div>
+<h3 class="text-xs font-semibold uppercase tracking-wider text-text-light-secondary dark:text-text-dark-secondary mb-3">Core Concepts</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-sm text-slate-600 dark:text-slate-400">
+<span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>
+                                Data Preprocessing
+                            </li>
+<li class="flex items-center text-sm text-slate-600 dark:text-slate-400">
+<span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>
+                                Feature Engineering
+                            </li>
+<li class="flex items-center text-sm text-slate-600 dark:text-slate-400">
+<span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>
+                                Exploratory Data Analysis (EDA)
+                            </li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-card-light dark:bg-card-dark rounded-xl shadow-sm hover:shadow-2xl dark:shadow-none border border-border-light dark:border-border-dark p-6 transition-all duration-500 hover:-translate-y-2 opacity-0 animate-fade-in-up delay-200 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-transparent dark:from-purple-900/10 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10">
+<div class="flex items-center space-x-4 mb-6">
+<div class="p-3 bg-purple-50 dark:bg-purple-900/30 rounded-lg text-purple-500 dark:text-purple-400 group-hover:scale-110 transition-transform duration-300">
+<span class="material-icons-round text-2xl">psychology</span>
+</div>
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">Machine Learning &amp; AI</h2>
+</div>
+<div class="space-y-5">
+<div>
+<h3 class="text-xs font-semibold uppercase tracking-wider text-text-light-secondary dark:text-text-dark-secondary mb-3">Generative AI</h3>
+<div class="flex flex-wrap gap-2">
+<span class="skill-pill px-3 py-1 bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full text-xs font-medium border border-slate-200 dark:border-slate-600 transition-all duration-300 hover:bg-purple-100 dark:hover:bg-purple-900/40 hover:text-purple-700 dark:hover:text-purple-300 hover:border-purple-200 dark:hover:border-purple-800 cursor-default">Transformers</span>
+<span class="skill-pill px-3 py-1 bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full text-xs font-medium border border-slate-200 dark:border-slate-600 transition-all duration-300 hover:bg-purple-100 dark:hover:bg-purple-900/40 hover:text-purple-700 dark:hover:text-purple-300 hover:border-purple-200 dark:hover:border-purple-800 cursor-default">LLMs</span>
+<span class="skill-pill px-3 py-1 bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full text-xs font-medium border border-slate-200 dark:border-slate-600 transition-all duration-300 hover:bg-purple-100 dark:hover:bg-purple-900/40 hover:text-purple-700 dark:hover:text-purple-300 hover:border-purple-200 dark:hover:border-purple-800 cursor-default">RAG</span>
+<span class="skill-pill px-3 py-1 bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full text-xs font-medium border border-slate-200 dark:border-slate-600 transition-all duration-300 hover:bg-purple-100 dark:hover:bg-purple-900/40 hover:text-purple-700 dark:hover:text-purple-300 hover:border-purple-200 dark:hover:border-purple-800 cursor-default">Prompt Eng.</span>
+<span class="skill-pill px-3 py-1 bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full text-xs font-medium border border-slate-200 dark:border-slate-600 transition-all duration-300 hover:bg-purple-100 dark:hover:bg-purple-900/40 hover:text-purple-700 dark:hover:text-purple-300 hover:border-purple-200 dark:hover:border-purple-800 cursor-default">Text-to-SQL</span>
+</div>
+</div>
+<div>
+<h3 class="text-xs font-semibold uppercase tracking-wider text-text-light-secondary dark:text-text-dark-secondary mb-3">Techniques</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-sm text-slate-600 dark:text-slate-400">
+<span class="w-1.5 h-1.5 bg-purple-400 rounded-full mr-2"></span>
+                                Supervised &amp; Unsupervised Learning
+                            </li>
+<li class="flex items-center text-sm text-slate-600 dark:text-slate-400">
+<span class="w-1.5 h-1.5 bg-purple-400 rounded-full mr-2"></span>
+                                Deep Learning &amp; NLP
+                            </li>
+<li class="flex items-center text-sm text-slate-600 dark:text-slate-400">
+<span class="w-1.5 h-1.5 bg-purple-400 rounded-full mr-2"></span>
+                                Model Evaluation &amp; Explainability
+                            </li>
+<li class="flex items-center text-sm text-slate-600 dark:text-slate-400">
+<span class="w-1.5 h-1.5 bg-purple-400 rounded-full mr-2"></span>
+                                Custom Guardrails for LLMs
+                            </li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-card-light dark:bg-card-dark rounded-xl shadow-sm hover:shadow-2xl dark:shadow-none border border-border-light dark:border-border-dark p-6 transition-all duration-500 hover:-translate-y-2 opacity-0 animate-fade-in-up delay-300 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-emerald-50/50 to-transparent dark:from-emerald-900/10 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10">
+<div class="flex items-center space-x-4 mb-6">
+<div class="p-3 bg-emerald-50 dark:bg-emerald-900/30 rounded-lg text-emerald-500 dark:text-emerald-400 group-hover:scale-110 transition-transform duration-300">
+<span class="material-icons-round text-2xl">settings_suggest</span>
+</div>
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">MLOps &amp; Deployment</h2>
+</div>
+<div class="space-y-5">
+<div>
+<h3 class="text-xs font-semibold uppercase tracking-wider text-text-light-secondary dark:text-text-dark-secondary mb-3">Lifecycle</h3>
+<ul class="space-y-2.5">
+<li class="flex items-start group/item">
+<span class="material-icons-round text-base text-emerald-500 mr-2.5 mt-0.5 group-hover/item:text-emerald-400 transition-colors">check_circle</span>
+<span class="text-sm text-slate-600 dark:text-slate-300 group-hover/item:text-slate-900 dark:group-hover/item:text-white transition-colors">End-to-end ML lifecycle management</span>
+</li>
+<li class="flex items-start group/item">
+<span class="material-icons-round text-base text-emerald-500 mr-2.5 mt-0.5 group-hover/item:text-emerald-400 transition-colors">check_circle</span>
+<span class="text-sm text-slate-600 dark:text-slate-300 group-hover/item:text-slate-900 dark:group-hover/item:text-white transition-colors">CI/CD pipelines for ML workflows</span>
+</li>
+<li class="flex items-start group/item">
+<span class="material-icons-round text-base text-emerald-500 mr-2.5 mt-0.5 group-hover/item:text-emerald-400 transition-colors">check_circle</span>
+<span class="text-sm text-slate-600 dark:text-slate-300 group-hover/item:text-slate-900 dark:group-hover/item:text-white transition-colors">Model versioning &amp; monitoring</span>
+</li>
+<li class="flex items-start group/item">
+<span class="material-icons-round text-base text-emerald-500 mr-2.5 mt-0.5 group-hover/item:text-emerald-400 transition-colors">check_circle</span>
+<span class="text-sm text-slate-600 dark:text-slate-300 group-hover/item:text-slate-900 dark:group-hover/item:text-white transition-colors">Batch &amp; Real-time inference</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-card-light dark:bg-card-dark rounded-xl shadow-sm hover:shadow-2xl dark:shadow-none border border-border-light dark:border-border-dark p-6 transition-all duration-500 hover:-translate-y-2 opacity-0 animate-fade-in-up delay-400 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-orange-50/50 to-transparent dark:from-orange-900/10 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10">
+<div class="flex items-center space-x-4 mb-6">
+<div class="p-3 bg-orange-50 dark:bg-orange-900/30 rounded-lg text-orange-500 dark:text-orange-400 group-hover:scale-110 transition-transform duration-300">
+<span class="material-icons-round text-2xl">cloud_queue</span>
+</div>
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">Cloud &amp; Platforms</h2>
+</div>
+<div class="space-y-6">
+<div class="group/aws">
+<div class="flex items-center mb-2">
+<span class="font-bold text-slate-800 dark:text-slate-200 mr-2 group-hover/aws:text-orange-600 dark:group-hover/aws:text-orange-400 transition-colors">AWS</span>
+<div class="h-px bg-slate-200 dark:bg-slate-700 flex-grow origin-left group-hover/aws:bg-orange-200 dark:group-hover/aws:bg-orange-800 transition-colors"></div>
+</div>
+<p class="text-sm text-text-light-secondary dark:text-text-dark-secondary leading-relaxed pl-1 border-l-2 border-transparent group-hover/aws:border-orange-500/30 transition-all">
+                        Bedrock, SageMaker, Lambda, S3, IAM
+                    </p>
+</div>
+<div class="group/gcp">
+<div class="flex items-center mb-2">
+<span class="font-bold text-slate-800 dark:text-slate-200 mr-2 group-hover/gcp:text-orange-600 dark:group-hover/gcp:text-orange-400 transition-colors">GCP</span>
+<div class="h-px bg-slate-200 dark:bg-slate-700 flex-grow origin-left group-hover/gcp:bg-orange-200 dark:group-hover/gcp:bg-orange-800 transition-colors"></div>
+</div>
+<p class="text-sm text-text-light-secondary dark:text-text-dark-secondary leading-relaxed pl-1 border-l-2 border-transparent group-hover/gcp:border-orange-500/30 transition-all">
+                        Vertex AI, Vertex AI Vector Search, Batch Predict API
+                    </p>
+</div>
+<div class="pt-2">
+<span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/50 dark:text-orange-200 border border-orange-200 dark:border-orange-800/50">
+                        Hybrid Cloud ML Solutions
+                    </span>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-card-light dark:bg-card-dark rounded-xl shadow-sm hover:shadow-2xl dark:shadow-none border border-border-light dark:border-border-dark p-6 transition-all duration-500 hover:-translate-y-2 opacity-0 animate-fade-in-up delay-500 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-pink-50/50 to-transparent dark:from-pink-900/10 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10">
+<div class="flex items-center space-x-4 mb-6">
+<div class="p-3 bg-pink-50 dark:bg-pink-900/30 rounded-lg text-pink-500 dark:text-pink-400 group-hover:scale-110 transition-transform duration-300">
+<span class="material-icons-round text-2xl">build</span>
+</div>
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">Frameworks &amp; Tools</h2>
+</div>
+<div class="space-y-4">
+<div class="flex flex-wrap gap-3">
+<div class="flex items-center space-x-2 bg-slate-50 dark:bg-slate-800/50 px-3 py-2 rounded-lg border border-slate-100 dark:border-slate-700 hover:border-pink-300 dark:hover:border-pink-700 hover:shadow-md dark:hover:shadow-none hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 cursor-default">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-200">LangChain</span>
+</div>
+<div class="flex items-center space-x-2 bg-slate-50 dark:bg-slate-800/50 px-3 py-2 rounded-lg border border-slate-100 dark:border-slate-700 hover:border-pink-300 dark:hover:border-pink-700 hover:shadow-md dark:hover:shadow-none hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 cursor-default">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-200">LangGraph</span>
+</div>
+<div class="flex items-center space-x-2 bg-slate-50 dark:bg-slate-800/50 px-3 py-2 rounded-lg border border-slate-100 dark:border-slate-700 hover:border-pink-300 dark:hover:border-pink-700 hover:shadow-md dark:hover:shadow-none hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 cursor-default">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-200">FastAPI</span>
+</div>
+<div class="flex items-center space-x-2 bg-slate-50 dark:bg-slate-800/50 px-3 py-2 rounded-lg border border-slate-100 dark:border-slate-700 hover:border-pink-300 dark:hover:border-pink-700 hover:shadow-md dark:hover:shadow-none hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 cursor-default">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-200">Streamlit</span>
+</div>
+<div class="flex items-center space-x-2 bg-slate-50 dark:bg-slate-800/50 px-3 py-2 rounded-lg border border-slate-100 dark:border-slate-700 hover:border-pink-300 dark:hover:border-pink-700 hover:shadow-md dark:hover:shadow-none hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 cursor-default">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-200">Docker</span>
+</div>
+<div class="flex items-center space-x-2 bg-slate-50 dark:bg-slate-800/50 px-3 py-2 rounded-lg border border-slate-100 dark:border-slate-700 hover:border-pink-300 dark:hover:border-pink-700 hover:shadow-md dark:hover:shadow-none hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 cursor-default">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-200">Git</span>
+</div>
+</div>
+<div class="mt-4 p-3 rounded-lg bg-pink-50/50 dark:bg-pink-900/10 border border-pink-100 dark:border-pink-800/20">
+<p class="text-xs text-pink-900 dark:text-pink-200 italic">
+                        Also experienced with REST APIs, Vector Databases &amp; Semantic Search Systems.
+                    </p>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-card-light dark:bg-card-dark rounded-xl shadow-sm hover:shadow-2xl dark:shadow-none border border-border-light dark:border-border-dark p-6 transition-all duration-500 hover:-translate-y-2 opacity-0 animate-fade-in-up delay-600 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/50 to-transparent dark:from-cyan-900/10 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10">
+<div class="flex items-center space-x-4 mb-6">
+<div class="p-3 bg-cyan-50 dark:bg-cyan-900/30 rounded-lg text-cyan-600 dark:text-cyan-400 group-hover:scale-110 transition-transform duration-300">
+<span class="material-icons-round text-2xl">storage</span>
+</div>
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">Databases</h2>
+</div>
+<div class="space-y-4">
+<div class="grid grid-cols-2 gap-4">
+<div class="text-center p-3 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 hover:bg-cyan-50 dark:hover:bg-cyan-900/20 hover:border-cyan-200 dark:hover:border-cyan-800 transition-all duration-300 group/db">
+<div class="font-bold text-slate-700 dark:text-slate-200 group-hover/db:text-cyan-700 dark:group-hover/db:text-cyan-300">PostgreSQL</div>
+<div class="text-xs text-slate-500 dark:text-slate-400">Relational</div>
+</div>
+<div class="text-center p-3 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 hover:bg-cyan-50 dark:hover:bg-cyan-900/20 hover:border-cyan-200 dark:hover:border-cyan-800 transition-all duration-300 group/db">
+<div class="font-bold text-slate-700 dark:text-slate-200 group-hover/db:text-cyan-700 dark:group-hover/db:text-cyan-300">SQLite</div>
+<div class="text-xs text-slate-500 dark:text-slate-400">Embedded</div>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-cyan-50 dark:bg-cyan-900/20 border border-cyan-100 dark:border-cyan-800/30">
+<div class="flex items-start">
+<span class="material-icons-round text-cyan-600 dark:text-cyan-400 text-sm mr-2 mt-0.5 animate-pulse-slow">search</span>
+<p class="text-sm text-cyan-900 dark:text-cyan-100">
+                             Specialized in Vector Databases for similarity search and knowledge bases.
+                         </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 bg-gradient-to-r from-slate-900 to-slate-800 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden opacity-0 animate-fade-in-up delay-600 group">
+<div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-primary/20 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-1000 ease-in-out"></div>
+<div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-1000 ease-in-out"></div>
+<div class="relative z-10 grid md:grid-cols-2 gap-8 items-center">
+<div>
+<h3 class="text-2xl font-bold text-white mb-4">Certified Expert</h3>
+<ul class="space-y-3">
+<li class="flex items-center text-slate-300 hover:text-white transition-colors duration-300">
+<span class="material-icons-round text-primary mr-3 shadow-glow">verified</span>
+                        AWS Solution Architect Associate (2023)
+                    </li>
+<li class="flex items-center text-slate-300 hover:text-white transition-colors duration-300">
+<span class="material-icons-round text-primary mr-3 shadow-glow">verified</span>
+                        30 Days of Google Cloud GCP Skills (2021)
+                    </li>
+<li class="flex items-center text-slate-300 hover:text-white transition-colors duration-300">
+<span class="material-icons-round text-primary mr-3 shadow-glow">emoji_events</span>
+                        Won Ideabox Hackathon in Lumiq
+                    </li>
+</ul>
+</div>
+<div class="text-left md:text-right">
+<p class="text-slate-400 mb-6 text-sm">Validating expertise through industry-recognized certifications and competitive achievements.</p>
+<a class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-slate-900 bg-white hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1" href="#">
+                    View Full Experience
+                    <span class="material-icons-round ml-2 text-sm transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-card-light dark:bg-card-dark border-t border-border-light dark:border-border-dark py-8 transition-colors duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center opacity-0 animate-fade-in delay-600">
+<p class="text-sm text-text-light-secondary dark:text-text-dark-secondary">
+            © 2025 Vaishnav Goswami. All rights reserved.
+        </p>
+</div>
+</footer>
+
+</body></html>

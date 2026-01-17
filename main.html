@@ -557,14 +557,26 @@
     document.addEventListener('DOMContentLoaded', function() {
         // Particles initialization
         function initParticles(isDark) {
+            // Cleanup existing particles instance to prevent memory leaks and stacked canvases
+            if (window.pJSDom && window.pJSDom.length > 0) {
+                // Cancel animation frame for existing instances
+                window.pJSDom.forEach(domItem => {
+                    if (domItem.pJS && domItem.pJS.fn && domItem.pJS.fn.drawAnimFrame) {
+                        cancelAnimationFrame(domItem.pJS.fn.drawAnimFrame);
+                    }
+                });
+                window.pJSDom = []; // Clear instance array
+                document.getElementById('particles-js').innerHTML = ''; // Clear canvas from DOM
+            }
+
             const color = isDark ? "#94a3b8" : "#10b981"; // Slate-400 or Emerald-500
 
             particlesJS("particles-js", {
                 "particles": {
                     "number": {
-                        "value": 600,
+                        "value": 400,
                         "density": {
-                            "enable": true,
+                            "enable": false,
                             "value_area": 800
                         }
                     },
@@ -582,7 +594,7 @@
                         }
                     },
                     "opacity": {
-                        "value": 0.5,
+                        "value": 0.4,
                         "random": false,
                         "anim": {
                             "enable": false,
@@ -592,7 +604,7 @@
                         }
                     },
                     "size": {
-                        "value": 3,
+                        "value": 5,
                         "random": true,
                         "anim": {
                             "enable": false,
@@ -609,7 +621,7 @@
                         // User said "strength = 1". I'll try 1.0 but it might be too strong.
                         // Actually, looking at the reference site "Strength 1.0" was near "Color".
                         // It probably means opacity. I'll set opacity to 1.
-                        "opacity": 1,
+                        // "opacity": 1,
                         "width": 1
                     },
                     "move": {
@@ -632,7 +644,7 @@
                     "events": {
                         "onhover": {
                             "enable": true,
-                            "mode": "repel"
+                            "mode": "repulse"
                         },
                         "onclick": {
                             "enable": true,
@@ -654,8 +666,8 @@
                             "opacity": 8,
                             "speed": 3
                         },
-                        "repel": {
-                            "distance": 100,
+                        "repulse": {
+                            "distance": 200,
                             "duration": 0.4
                         },
                         "push": {
@@ -668,6 +680,81 @@
                 },
                 "retina_detect": true
             });
+
+            // Apply Monkey-patch to reduce repulsion speed immediately after init
+            applyRepulsePatch();
+        }
+
+        // Monkey-patch particles.js repulse mode to reduce speed/strength
+        function applyRepulsePatch() {
+            if (window.pJSDom && window.pJSDom.length > 0) {
+                // Patch the last instance (newly created)
+                const pJS_instance = window.pJSDom[window.pJSDom.length - 1].pJS;
+                pJS_instance.fn.modes.repulseParticle = function(p) {
+                    const pJS = pJS_instance;
+                    function clamp(number, min, max) { return Math.min(Math.max(number, min), max); }
+                    function isInArray(value, array) { return array.indexOf(value) > -1; }
+
+                    if(pJS.interactivity.events.onhover.enable && isInArray('repulse', pJS.interactivity.events.onhover.mode) && pJS.interactivity.status == 'mousemove') {
+                        var dx_mouse = p.x - pJS.interactivity.mouse.pos_x,
+                            dy_mouse = p.y - pJS.interactivity.mouse.pos_y,
+                            dist_mouse = Math.sqrt(dx_mouse*dx_mouse + dy_mouse*dy_mouse);
+
+                        var normVec = {x: dx_mouse/dist_mouse, y: dy_mouse/dist_mouse},
+                            repulseRadius = pJS.interactivity.modes.repulse.distance,
+                            velocity = 100,
+                            // Scale down the effect to 2% to make it smoother/slower
+                            repulseFactor = clamp((1/repulseRadius)*(-1*Math.pow(dist_mouse/repulseRadius,2)+1)*repulseRadius*velocity, 0, 100) * 0.02;
+
+                        var pos = {
+                            x: p.x + normVec.x * repulseFactor,
+                            y: p.y + normVec.y * repulseFactor
+                        }
+
+                        if(pJS.particles.move.out_mode == 'bounce'){
+                            if(pos.x - p.radius > 0 && pos.x + p.radius < pJS.canvas.w) p.x = pos.x;
+                            if(pos.y - p.radius > 0 && pos.y + p.radius < pJS.canvas.h) p.y = pos.y;
+                        } else {
+                            p.x = pos.x;
+                            p.y = pos.y;
+                        }
+                    }
+                    // Keep original click logic
+                    else if(pJS.interactivity.events.onclick.enable && isInArray('repulse', pJS.interactivity.events.onclick.mode)) {
+                        if(!pJS.tmp.repulse_finish){
+                            pJS.tmp.repulse_count++;
+                            if(pJS.tmp.repulse_count == pJS.particles.array.length){
+                                pJS.tmp.repulse_finish = true;
+                            }
+                        }
+                        if(pJS.tmp.repulse_clicking){
+                            var repulseRadius = Math.pow(pJS.interactivity.modes.repulse.distance/6, 3);
+                            var dx = pJS.interactivity.mouse.click_pos_x - p.x,
+                                dy = pJS.interactivity.mouse.click_pos_y - p.y,
+                                d = dx*dx + dy*dy;
+                            var force = -repulseRadius / d * 1;
+                            function process(){
+                                var f = Math.atan2(dy,dx);
+                                p.vx = force * Math.cos(f);
+                                p.vy = force * Math.sin(f);
+                                if(pJS.particles.move.out_mode == 'bounce'){
+                                    var pos = { x: p.x + p.vx, y: p.y + p.vy }
+                                    if (pos.x + p.radius > pJS.canvas.w) p.vx = -p.vx;
+                                    else if (pos.x - p.radius < 0) p.vx = -p.vx;
+                                    if (pos.y + p.radius > pJS.canvas.h) p.vy = -p.vy;
+                                    else if (pos.y - p.radius < 0) p.vy = -p.vy;
+                                }
+                            }
+                            if(d <= repulseRadius) process();
+                        } else {
+                            if(pJS.tmp.repulse_clicking == false){
+                                p.vx = p.vx_i;
+                                p.vy = p.vy_i;
+                            }
+                        }
+                    }
+                };
+            }
         }
 
         // Check initial theme
