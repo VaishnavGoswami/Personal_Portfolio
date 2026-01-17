@@ -574,9 +574,9 @@
             particlesJS("particles-js", {
                 "particles": {
                     "number": {
-                        "value": 600,
+                        "value": 400,
                         "density": {
-                            "enable": true,
+                            "enable": false,
                             "value_area": 800
                         }
                     },
@@ -594,7 +594,7 @@
                         }
                     },
                     "opacity": {
-                        "value": 0.5,
+                        "value": 0.4,
                         "random": false,
                         "anim": {
                             "enable": false,
@@ -604,7 +604,7 @@
                         }
                     },
                     "size": {
-                        "value": 3,
+                        "value": 5,
                         "random": true,
                         "anim": {
                             "enable": false,
@@ -621,7 +621,7 @@
                         // User said "strength = 1". I'll try 1.0 but it might be too strong.
                         // Actually, looking at the reference site "Strength 1.0" was near "Color".
                         // It probably means opacity. I'll set opacity to 1.
-                        "opacity": 1,
+                        // "opacity": 1,
                         "width": 1
                     },
                     "move": {
@@ -704,7 +704,7 @@
                             repulseRadius = pJS.interactivity.modes.repulse.distance,
                             velocity = 100,
                             // Scale down the effect to 2% to make it smoother/slower
-                            repulseFactor = clamp((1/repulseRadius)*(-1*Math.pow(dist_mouse/repulseRadius,2)+1)*repulseRadius*velocity, 0, 50) * 0.02;
+                            repulseFactor = clamp((1/repulseRadius)*(-1*Math.pow(dist_mouse/repulseRadius,2)+1)*repulseRadius*velocity, 0, 100) * 0.02;
 
                         var pos = {
                             x: p.x + normVec.x * repulseFactor,
